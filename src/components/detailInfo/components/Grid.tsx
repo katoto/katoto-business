@@ -1,17 +1,16 @@
 /**
  * 固定布局
  */
-import React from 'react';
-import classNames from 'classnames';
-import { Tooltip } from 'antd';
-import _ from 'lodash';
-import { DetailInfoProps } from '../interface';
-import '../index.less';
+import React from "react";
+import classNames from "classnames";
+import { Tooltip } from "antd";
+import { DetailInfoProps } from "../interface";
+import "../index.less";
 
 const fillObj = {
-  label: '',
-  name: '',
-  value: '',
+  label: "",
+  name: "",
+  value: ""
 };
 
 // 一行
@@ -32,18 +31,18 @@ function renderInfo(list: any, num: number) {
   const dataLen = data.length;
   const resetLen = dataLen % num === 0 ? 0 : num - (dataLen % num);
 
-  const arr = new Array(resetLen).fill(isArray ? fillObj : ['', '']);
+  const arr = new Array(resetLen).fill(isArray ? fillObj : ["", ""]);
   const newList = data.concat(arr);
 
   for (let index = 0; index < newList.length; index++) {
-    let element = data[index] || ['', ''];
-    const randomData = _.uniqueId('detailInfo_');
+    let element = data[index] || ["", ""];
+    const randomData = "";
 
     if (isArray) {
       element = [
-        element.label ?? '',
-        element.value ?? '',
-        element.lighthigh ?? '',
+        element.label ?? "",
+        element.value ?? "",
+        element.lighthigh ?? ""
       ];
     }
 
@@ -55,11 +54,11 @@ function renderInfo(list: any, num: number) {
         key={colItemKey}
         style={{ maxWidth: `${100 / num}%` }}
       >
-        <span className="text">{`${element[0]}${element[0] && '：'}`}</span>
+        <span className="text">{`${element[0]}${element[0] && "："}`}</span>
         <Tooltip placement="topLeft" title={element[1]}>
           <span
-            className={classNames('textVal', 'ellipsis', {
-              strong: !!element[2],
+            className={classNames("textVal", "ellipsis", {
+              strong: !!element[2]
             })}
           >
             {element[1]}
@@ -76,7 +75,7 @@ function renderInfo(list: any, num: number) {
   }
 
   // 获取随机值以防 key 的值重复
-  const randomData = _.uniqueId('detailInfo_');
+  const randomData = Math.random();
   row.push(rowEle(randomData, col));
 
   return row;

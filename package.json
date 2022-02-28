@@ -1,6 +1,6 @@
 {
   "name": "@hll/stone-business",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
@@ -37,7 +37,6 @@
     "dayjs": "^1.8.25",
     "js-cookie": "^2.2.1",
     "lint-staged": "^10.0.7",
-    "lodash": "^4.17.15",
     "prettier": "^1.19.1",
     "react": "^17.0.0",
     "yorkie": "^2.0.0"
