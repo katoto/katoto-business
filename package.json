@@ -1,6 +1,6 @@
 {
   "name": "@hll/stone-business",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
@@ -43,14 +43,10 @@
   },
   "devDependencies": {
     "@types/classnames": "^2.2.10",
-    "@types/enzyme": "^3.10.5",
-    "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^25.2.1",
     "@types/js-cookie": "^2.2.6",
     "@types/react-test-renderer": "^16.9.2",
     "dumi": "^1.1.38",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
     "father-build": "^1.21.1",
     "react-test-renderer": "^16.13.1"
   }
