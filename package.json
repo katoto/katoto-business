@@ -1,5 +1,5 @@
 {
-  "name": "stone-business",
+  "name": "@hll/stone-business",
   "version": "1.0.0",
   "scripts": {
     "start": "dumi dev",
