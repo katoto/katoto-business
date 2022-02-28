@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    // typescript 进行类型检查，编译使用 babel
+    "target": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react",
+    "declaration": true,
+    // for ... of
+    "downlevelIteration": true,
+    "baseUrl": ".",
+    "paths": {
+      "@hll/stone-business": ["src/index.tsx"]
+    }
+  },
+  "include": ["src", "docs", "types.d.ts"]
+}
