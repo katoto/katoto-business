@@ -1,21 +1,23 @@
-node_modules
-dist
-docs-dist
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-.cache
+# dependencies
+/node_modules
+/npm-debug.log*
+/yarn-error.log
+/yarn.lock
+/package-lock.json
+
+# production
+/dist
+
+# misc
 .DS_Store
-.vscode
 
-# Log files
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# umi
+.umi
+.umi-production
+.umi-test
+.env.local
 
-# Editor directories and files
-.idea
 .vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw*
+.bitmap

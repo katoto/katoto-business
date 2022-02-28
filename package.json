@@ -1,28 +1,20 @@
 {
-  "name": "@hll/stone-business",
-  "version": "0.0.0",
-  "license": "ISC",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/esm/index.d.ts",
+  "name": "stone-business",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "vite",
-    "build:docs": "vite build",
-    "build": "yarn run build:lib && yarn run build:docs",
-    "build:lib": "NODE_ENV=production rollup -c",
-    "build:lib-watch": "NODE_ENV=production rollup -c -w",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src ./docs",
-    "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx ./src ./docs",
-    "clean": "rm -rf dist docs-dist",
-    "commit": "git-cz",
-    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
-    "release:major": "standard-version --release-as major",
-    "release:minor": "standard-version --release-as minor",
-    "release:patch": "standard-version --release-as patch"
+    "start": "dumi dev",
+    "docs:build": "dumi build",
+    "build": "father-build",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "test": "umi-test -w",
+    "test:coverage": "umi-test --coverage"
   },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "typings": "dist/index.d.ts",
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
@@ -35,76 +27,32 @@
     ]
   },
   "dependencies": {
-    "@babel/runtime": "^7.13.0"
-  },
-  "peerDependencies": {
-    "react": "^16.14.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.14.0",
-    "@babel/plugin-transform-runtime": "^7.13.15",
-    "@babel/preset-env": "^7.14.1",
-    "@babel/preset-react": "^7.13.13",
-    "@babel/preset-typescript": "^7.13.0",
-    "@hll/eslint-config-react": "^0.x",
-    "@hll/rollup-plugin-react-md": "^0.x",
-    "@hll/vite-plugin-van": "^0.x",
-    "@rollup/plugin-babel": "^5.3.0",
-    "@rollup/plugin-url": "^6.0.0",
-    "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/react": "^11.2.6",
-    "@types/jest": "^26.0.23",
-    "@types/postcss-url": "^8.0.1",
-    "@types/react": "^17.0.5",
-    "@types/react-dom": "^17.0.3",
-    "@vitejs/plugin-react-refresh": "^1.3.3",
-    "autoprefixer": "^10.2.5",
-    "eslint": "^7.26.0",
-    "git-cz": "^4.7.6",
-    "jest": "^26.6.3",
-    "less": "^4.1.1",
-    "lint-staged": "^11.0.0",
-    "postcss": "^8.2.14",
-    "postcss-url": "^10.1.3",
-    "prettier": "^2.3.0",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "rollup": "^2.47.0",
-    "rollup-plugin-delete": "^2.0.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.0",
-    "rollup-plugin-typescript2": "^0.30.0",
-    "standard-version": "^9.3.0",
-    "ts-jest": "^26.5.6",
-    "typescript": "^4.2.4",
-    "vite": "^2.3.0",
+    "@ant-design/icons": "^4.1.0",
+    "@types/lodash": "^4.14.179",
+    "@umijs/preset-react": "1.x",
+    "@umijs/test": "^3.0.5",
+    "antd": "^4.18.8",
+    "axios": "^0.19.2",
+    "classnames": "^2.2.6",
+    "dayjs": "^1.8.25",
+    "dumi": "^1.1.38",
+    "father-build": "^1.21.1",
+    "js-cookie": "^2.2.1",
+    "lint-staged": "^10.0.7",
+    "lodash": "^4.17.15",
+    "prettier": "^1.19.1",
+    "react": "^17.0.0",
     "yorkie": "^2.0.0"
   },
-  "files": [
-    "src",
-    "dist",
-    "docs-dist",
-    "CHANGELOG.md"
-  ],
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "hllStarterKit": {
-    "version": "@hll/create-project@1.10.6",
-    "boilerplateName": "@hll/boilerplate-library-react"
-  },
-  "description": "stone-business components test",
-  "repository": {
-    "type": "git",
-    "url": "https://gitlab.huolala.cn/group-van/stone-business"
+  "devDependencies": {
+    "@types/classnames": "^2.2.10",
+    "@types/enzyme": "^3.10.5",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^25.2.1",
+    "@types/js-cookie": "^2.2.6",
+    "@types/react-test-renderer": "^16.9.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "react-test-renderer": "^16.13.1"
   }
 }
