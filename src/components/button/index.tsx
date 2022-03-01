@@ -1,19 +1,19 @@
-import React from 'react';
-import classnames from 'classnames';
-import './index.less';
+import React from "react";
+import classnames from "classnames";
+import "./index.less";
 
 export enum EMButtonTextSize {
-  Large = 'large',
-  Middle = 'middle',
-  Normal = 'normal',
+  Large = "large",
+  Middle = "middle",
+  Normal = "normal",
 }
 
 export enum EMButtonContentTypes {
-  Adaptive = 'adaptive',
-  Full = 'full',
+  Adaptive = "adaptive",
+  Full = "full",
 }
 
-interface TButtonProps {
+export interface ButtonProps {
   contentType?: EMButtonContentTypes;
   size?: EMButtonTextSize;
   text: string | React.ReactElement;
@@ -35,7 +35,7 @@ const Button = ({
   disabledCallback = null,
   className,
   style = {},
-}: TButtonProps) => {
+}: ButtonProps) => {
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     if (loading || disabled) {
       e.preventDefault();
@@ -48,11 +48,11 @@ const Button = ({
   return (
     <div
       className={classnames(
-        ['button', `button-${size}`, `button-${contentType}`],
+        ["button", `button-${size}`, `button-${contentType}`],
         {
-          'button-disable': disabled,
+          "button-disable": disabled,
         },
-        [className],
+        [className]
       )}
       onClick={handleClick}
       style={style}

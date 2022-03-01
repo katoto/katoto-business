@@ -1,4 +1,7 @@
 export default {
-  esm: "rollup",
-  cjs: "rollup"
+  esm: {
+    type: "rollup",
+    minify: false,
+  },
+  cjs: "rollup",
 };

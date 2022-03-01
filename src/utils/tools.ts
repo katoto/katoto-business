@@ -1,5 +1,5 @@
 export function centToYuan(val: number, digits = 2) {
-  if (typeof val !== 'number') {
+  if (typeof val !== "number") {
     return val;
   }
   const yuan = val / 100;
@@ -7,4 +7,8 @@ export function centToYuan(val: number, digits = 2) {
     return yuan.toFixed(digits);
   }
   return yuan;
+}
+
+export function getObjectKeys<T>(obj: T) {
+  return Object.keys(obj) as (keyof T)[];
 }
