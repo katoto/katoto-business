@@ -1,0 +1,61 @@
+{
+  "name": "stone-business-doc",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "umi dev",
+    "build": "umi build",
+    "build:analyse": "ANALYZE=1 umi build",
+    "postinstall": "umi generate tmp",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage",
+    "generate:route": "umi generate route",
+    "inspect": "umi webpack",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src",
+    "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx --fix ./src",
+    "commit": "git-cz"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/pro-layout": "~6.24.0",
+    "@umijs/preset-react": "1.x",
+    "ahooks": "^2.9.6",
+    "umi": "^3.3.10"
+  },
+  "devDependencies": {
+    "@hll/eslint-config-react": "^0.x",
+    "@hll/umi-plugin-van": "^0.x",
+    "@types/classnames": "^2.2.11",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@umijs/test": "^3.3.10",
+    "eslint": "^7.22.0",
+    "git-cz": "^4.7.6",
+    "lint-staged": "^10.0.7",
+    "prettier": "^2.2.0",
+    "react": "17.x",
+    "react-dom": "17.x",
+    "typescript": "^4.1.2",
+    "yorkie": "^2.0.0"
+  },
+  "hllStarterKit": {
+    "version": "@hll/create-project@1.14.2",
+    "boilerplateName": "@hll/boilerplate-project-react-pc"
+  },
+  "description": "npm 包网页展示",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.huolala.cn/group-van/stone-business-doc"
+  }
+}
