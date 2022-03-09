@@ -1,0 +1,10 @@
+node_modules
+.DS_Store
+dist
+build
+dist-ssr
+*.local
+yarn-error.log
+yarn.lock
+stats.html
+src/.umi
