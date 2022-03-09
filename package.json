@@ -26,8 +26,11 @@
       "prettier --parser=typescript --write"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.huolala.cn/group-van/stone-business.git"
+  },
   "dependencies": {
-    "@ant-design/icons": "^4.1.0",
     "@types/lodash": "^4.14.179",
     "@umijs/preset-react": "^2.1.1",
     "@umijs/test": "^3.0.5",

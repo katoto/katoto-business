@@ -1,5 +1,6 @@
 ---
-title: 组件说明
+title: Button
+sidebar: true
 ---
 
 ## button demo
@@ -7,10 +8,10 @@ title: 组件说明
 #### 文档 <Badge>Hello</Badge>
 
 ```tsx
-import React, { useEffect } from 'react';
-import Button from './index';
+import React, { useEffect } from "react";
+import Button from "./index";
 
-export default function() {
+export default function () {
   return <Button size="large" text="sss"></Button>;
 }
 ```

@@ -1,7 +1,6 @@
 ---
-title: 组件说明
-nav:
-  order: 2
+title: DetailInfo
+sidebar: true
 ---
 
 # DetailInfo 详情文本内容展示
@@ -19,24 +18,24 @@ nav:
  * desc: 格式为 `Map<文本对应的字段名, [文本的标题, 文本对应的值, 布尔值表示是否高亮展示文本]>`
  */
 
-import React, { useEffect } from 'react';
-import DetailInfo from './index';
+import React, { useEffect } from "react";
+import DetailInfo from "./index";
 
-export default function() {
+export default function () {
   const map = new Map([
-    ['key', ['单号', 'value', true]], // key为字段名  收货单号为字段名对应的文案   value为字段名对应的值  最后布尔值为是否高亮展示
-    ['j2a', ['类型', 'ds']],
-    ['j3a', ['状态', 'ds']],
-    ['j4a', ['来源单号', 'ds']],
-    ['j5a', ['关联单号', 'ds']],
-    ['j6a', ['供应商', 'ds']],
-    ['j7a', ['来源地', 'ds']],
+    ["key", ["单号", "value", true]], // key为字段名  收货单号为字段名对应的文案   value为字段名对应的值  最后布尔值为是否高亮展示
+    ["j2a", ["类型", "ds"]],
+    ["j3a", ["状态", "ds"]],
+    ["j4a", ["来源单号", "ds"]],
+    ["j5a", ["关联单号", "ds"]],
+    ["j6a", ["供应商", "ds"]],
+    ["j7a", ["来源地", "ds"]],
   ]);
 
-  const arr = map.get('key');
+  const arr = map.get("key");
 
-  arr.splice(1, 1, 'new value');
-  map.set('key', arr);
+  arr.splice(1, 1, "new value");
+  map.set("key", arr);
 
   return <DetailInfo map={map} cols={3} />;
 }
@@ -45,36 +44,36 @@ export default function() {
 ## 以对象数组的格式传入文本数据
 
 ```tsx
-import React from 'react';
-import DetailInfo from './index';
+import React from "react";
+import DetailInfo from "./index";
 
-export default function() {
+export default function () {
   const list = [
     {
-      name: 'businessScope',
-      label: '单号',
-      value: '生鲜产品',
+      name: "businessScope",
+      label: "单号",
+      value: "生鲜产品",
       lighthigh: true,
     },
     {
-      name: 'j2a',
-      label: '类型',
-      value: '测试 ',
+      name: "j2a",
+      label: "类型",
+      value: "测试 ",
     },
     {
-      name: 'j5a',
-      label: '来源单号',
-      value: 'value',
+      name: "j5a",
+      label: "来源单号",
+      value: "value",
     },
     {
-      name: 'j3a',
-      label: '状态',
-      value: '产品',
+      name: "j3a",
+      label: "状态",
+      value: "产品",
     },
     {
-      name: 'ja',
-      label: '状态2',
-      value: '产品1',
+      name: "ja",
+      label: "状态2",
+      value: "产品1",
     },
   ];
 
@@ -90,36 +89,36 @@ export default function() {
  * desc: Map对象和数组的形式都可以进行渲染
  */
 
-import React from 'react';
-import DetailInfo from './index';
+import React from "react";
+import DetailInfo from "./index";
 
-export default function() {
+export default function () {
   const list = [
     {
-      name: 'businessScope',
-      label: '单号',
-      value: '生鲜产品',
+      name: "businessScope",
+      label: "单号",
+      value: "生鲜产品",
       lighthigh: true,
     },
     {
-      name: 'j2a',
-      label: '收货类型',
-      value: '测试 ',
+      name: "j2a",
+      label: "收货类型",
+      value: "测试 ",
     },
     {
-      name: 'j5a',
-      label: '来源单号',
-      value: 'value',
+      name: "j5a",
+      label: "来源单号",
+      value: "value",
     },
     {
-      name: 'j3a',
-      label: '状态',
-      value: '生鲜产品1',
+      name: "j3a",
+      label: "状态",
+      value: "生鲜产品1",
     },
     {
-      name: 'ja',
-      label: '状态2',
-      value: '生鲜产品2',
+      name: "ja",
+      label: "状态2",
+      value: "生鲜产品2",
     },
   ];
 
