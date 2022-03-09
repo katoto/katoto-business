@@ -1,13 +1,16 @@
 {
   "name": "@hll/stone-business",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "scripts": {
     "start": "dumi dev",
     "build": "dumi build && mv ./dist/index.html ./dist/200.html",
     "package:build": "father-build",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test -w",
-    "test:coverage": "umi-test --coverage"
+    "test:coverage": "umi-test --coverage",
+    "release:major": "standard-version --release-as major",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch"
   },
   "files": [
     "dist"
@@ -49,6 +52,7 @@
     "dumi": "^1.1.38",
     "father-build": "^1.21.1",
     "prettier": "^2.5.1",
+    "standard-version": "^9.3.2",
     "yorkie": "^2.0.0"
   }
 }
