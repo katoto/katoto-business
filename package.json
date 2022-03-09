@@ -3,8 +3,8 @@
   "version": "0.0.7",
   "scripts": {
     "start": "dumi dev",
-    "docs:build": "dumi build",
-    "build": "father-build",
+    "build": "dumi build",
+    "package:build": "father-build",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test -w",
     "test:coverage": "umi-test --coverage"
