@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.15](https://gitlab.huolala.cn/group-van/stone-business/compare/v0.0.14...v0.0.15) (2022-03-10)
+
+### Bug Fixes
+
+- fix antd 缺少类目 ([f5719f6](https://gitlab.huolala.cn/group-van/stone-business/commit/f5719f6e0dad1162cb294e3ef70e9bce90c6eed8))
+
 ### [0.0.14](https://gitlab.huolala.cn/group-van/stone-business/compare/v0.0.13...v0.0.14) (2022-03-10)
 
 ### [0.0.12](https://gitlab.huolala.cn/group-van/stone-business/compare/v0.0.11...v0.0.12) (2022-03-10)

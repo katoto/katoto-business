@@ -1,6 +1,6 @@
 {
   "name": "@hll/stone-business",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "scripts": {
     "start": "dumi dev",
     "build": "dumi build && mv ./dist/index.html ./dist/200.html",
