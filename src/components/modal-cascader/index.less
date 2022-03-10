@@ -4,7 +4,7 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  height: 566px;
+  height: 472px;
   border: 1px solid @borderColor;
 
   .cascader-head {
@@ -52,24 +52,28 @@
       }
     }
   }
-}
 
-.city-sel-dropdown {
-  height: 510px;
-  padding-top: 0 !important;
-  box-shadow: none !important;
+  .city-sel-dropdown {
+    height: 416px;
+    padding-top: 0 !important;
+    box-shadow: none !important;
 
-  .ant-cascader-menus,
-  .ant-cascader-menu {
-    height: 472px;
-    margin-top: 0;
-  }
-
-  .ant-cascader-menus {
+    .ant-cascader-menus,
     .ant-cascader-menu {
-      &:last-child {
-        border-right: 0;
+      height: 378px;
+      margin-top: 0;
+    }
+
+    .ant-cascader-menus {
+      .ant-cascader-menu {
+        &:last-child {
+          border-right: 0;
+        }
       }
     }
   }
+}
+
+.ant-modal {
+  padding-bottom: 0 !important;
 }

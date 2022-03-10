@@ -12,7 +12,7 @@ import React, { useEffect } from "react";
 import Button from "./index";
 
 export default function () {
-  return <Button size="large" text="sss"></Button>;
+  return <Button text="测试"></Button>;
 }
 ```
 

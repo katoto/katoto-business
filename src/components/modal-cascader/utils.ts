@@ -99,11 +99,9 @@ export function treeKeyPathMap(
           map[arrList[i][fieldNames.label]] = nPointStr;
         }
       }
-      // hllId特殊 处理
-      if (mapKeyName) {
-        if (arrList[i][mapKeyName]) {
-          map[arrList[i][mapKeyName]] = nPointStr;
-        }
+      // mapKeyName 特殊key 处理。eg: hllId
+      if (mapKeyName && arrList[i][mapKeyName]) {
+        map[arrList[i][mapKeyName]] = nPointStr;
       } else {
         // value 找 path 路径
         map[arrList[i][fieldNames.value]] = nPointStr;

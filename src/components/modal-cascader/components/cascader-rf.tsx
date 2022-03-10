@@ -1,11 +1,7 @@
 import { Input, Tag } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
-import { memo, useEffect, useMemo, useState } from "react";
-import {
-  treeKeyPathMap,
-  findNodeByValue,
-  cascaderOption2Value,
-} from "../utils";
+import { memo, useEffect, useMemo, useRef, useState } from "react";
+import { findNodeByValue, cascaderOption2Value } from "../utils";
 import "./cascader-rf.less";
 interface CascaderValsItemKeys {
   code: string;
@@ -26,6 +22,7 @@ interface CascaderRfProps {
     value: string;
     children: string;
   };
+  listValMap: any;
 }
 
 const CascaderRf: React.FC<CascaderRfProps> = ({
@@ -33,26 +30,22 @@ const CascaderRf: React.FC<CascaderRfProps> = ({
   updateCascader,
   list,
   fieldNames,
+  listValMap,
 }) => {
   const [inputValue, setInputValue] = useState("");
+  const [subInputValue, setSubInputValue] = useState("");
   const [searchValue, setSearchValue] = useState("");
   const [selOptionVals, setSelOptionVals] = useState<CascaderValsItemKeys[][]>(
     []
   );
+  const subRef = useRef<Input>(null);
   const selVals: string[][] = useMemo(() => {
     return cascaderOption2Value(cascaderVals, fieldNames);
   }, [cascaderVals, fieldNames]);
-  const listValMap = useMemo(() => {
-    return treeKeyPathMap(list, fieldNames, "hllId");
-  }, [fieldNames, list]);
 
   useEffect(() => {
     setSelOptionVals(cascaderVals);
   }, [cascaderVals]);
-
-  useEffect(() => {
-    console.log("==childuseEffect==");
-  });
 
   // 处理inp 数据过滤
   function handleFilterInp(val: string) {
@@ -72,17 +65,16 @@ const CascaderRf: React.FC<CascaderRfProps> = ({
   }
 
   function doEnterHandle(e: any) {
-    let inpVal = e.target.value;
+    const inpVal = e.target.value;
+    let flag = false;
     if (inpVal) {
-      inpVal = inpVal.replace(/，/g, ",");
-      let inpArr = inpVal.split(",");
+      let inpArr = inpVal.replace(/，/g, ",").replace(/\n/g, ",").split(",");
       inpArr = [...new Set(inpArr)]; // 输入去重
       const selCascaderArr: any = selVals;
       const selCascaderNodeArr: any = selOptionVals;
       const selValsPathArr = selVals.map((items) => {
         return items.join("__RC_CASCADER_SPLIT__");
       });
-      console.log(selValsPathArr);
       inpArr.forEach((inpItem: string) => {
         // push 前去重
         if (
@@ -96,11 +88,13 @@ const CascaderRf: React.FC<CascaderRfProps> = ({
           const splitNodeArr = splitValueArr.map((code: string) => {
             return findNodeByValue(code, list, fieldNames);
           });
+          flag = true;
           selCascaderArr.push(splitValueArr);
           selCascaderNodeArr.push(splitNodeArr);
         }
       });
       updateCascader([...selCascaderArr], [...selCascaderNodeArr]);
+      return flag;
     }
   }
 
@@ -136,21 +130,25 @@ const CascaderRf: React.FC<CascaderRfProps> = ({
 
       {selOptionVals.length === 0 && (
         <Input.TextArea
-          style={{ marginTop: 10, height: 460, padding: "0 2px" }}
+          style={{ marginTop: 10, height: 364, padding: "0 2px" }}
           placeholder={
             searchValue && selOptionVals.length === 0
               ? "暂无数据"
-              : "请输入城市id，用英文逗号隔开"
+              : "输入「城市id」或「城市名称」按「回车键」确认，支持逗号及分行格式批量导入"
           }
           value={inputValue}
           bordered={false}
           onPressEnter={(e: any) => {
             doEnterHandle(e);
             setSearchValue("");
+            setInputValue("");
+            setTimeout(() => {
+              subRef.current?.focus();
+            }, 0);
           }}
           onChange={(e) => {
             const val = e.target.value;
-            setInputValue(val.replace(/[\r\n]/g, "")); // 去除回车符展示
+            setInputValue(val.replace(/[\r]/g, "")); // 去除回车符展示
           }}
         />
       )}
@@ -170,8 +168,14 @@ const CascaderRf: React.FC<CascaderRfProps> = ({
             return (
               <Tag
                 key={joinVal}
-                style={{ marginTop: "8px" }}
+                style={{
+                  marginTop: "8px",
+                  maxWidth: "220px",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                }}
                 closable
+                title={joinName}
                 onClose={() => {
                   setSearchValue("");
                   const selCascaderArr = [...selVals];
@@ -191,9 +195,18 @@ const CascaderRf: React.FC<CascaderRfProps> = ({
           })}
           {/* 标签解析后还可再输入 */}
           <Input
+            ref={subRef}
             className="cascader-label-inp"
+            value={subInputValue}
             onPressEnter={(e: any) => {
-              doEnterHandle(e);
+              const isSucc = doEnterHandle(e);
+              if (isSucc) {
+                setSubInputValue("");
+              }
+            }}
+            onChange={(e) => {
+              const val = e.target.value;
+              setSubInputValue(val.replace(/[\r]/g, "")); // 去除回车符展示
             }}
           />
         </div>

@@ -2,10 +2,15 @@ import { Modal, Checkbox, message } from "antd";
 import CascaderRf from "./components/cascader-rf";
 import { Cascader } from "antd";
 import { useEffect, useMemo, useState } from "react";
-import { getTreeAllValue, calListLevel, catListLevel } from "./utils";
+import {
+  getTreeAllValue,
+  calListLevel,
+  catListLevel,
+  treeKeyPathMap,
+  findNodeByValue,
+} from "./utils";
 import type { CheckboxChangeEvent } from "antd/lib/checkbox";
 import "./index.less";
-
 interface List {
   value?: string | number;
   label?: string;
@@ -22,6 +27,8 @@ interface CascaderProps {
     children: string;
   };
   list: List[];
+  defaultValue?: string[];
+  defaultValueKey?: string;
   onCancel?: () => void;
   onOk?: (selOptions: any[]) => void;
 }
@@ -39,6 +46,8 @@ const AddCityBlock: React.FC<CascaderProps> = ({
   cascaderLevel,
   fieldNames = DefaultFieldNames,
   list,
+  defaultValue,
+  defaultValueKey,
 }) => {
   const [cascaderVals, setCascaderVals] = useState<any>([]);
   const [cascaderSelOptions, setCascaderSelOptions] = useState<any>([]);
@@ -55,8 +64,12 @@ const AddCityBlock: React.FC<CascaderProps> = ({
       return { checked: false };
     });
   }, [level]);
+
   const [levelArr, setLevelArr] =
     useState<{ checked: boolean | undefined }[]>(levelMap); // 直接fill 对象是同一个
+  const listValMap = useMemo(() => {
+    return treeKeyPathMap(newList, fieldNames, defaultValueKey);
+  }, [fieldNames, newList]);
 
   function checkAllCheckBox() {
     // hack 处理，避免检查异步
@@ -88,7 +101,7 @@ const AddCityBlock: React.FC<CascaderProps> = ({
   }
 
   function updateCascader(value: any, valueOptions: any) {
-    // 更新选择
+    // 更新选择 & 回显
     const oVal = value || [];
     const oValueOptions = valueOptions || [];
     if (!oVal || oVal.length === 0) {
@@ -103,6 +116,30 @@ const AddCityBlock: React.FC<CascaderProps> = ({
     }
     setCascaderVals(oVal);
     setCascaderSelOptions(oValueOptions);
+  }
+
+  function defaultValueHandle(inpArr: string[]) {
+    // 初始值 & 回显
+    let nInpArr = inpArr;
+    if (nInpArr) {
+      nInpArr = [...new Set(nInpArr)]; // 输入去重
+      const selCascaderArr: any = [];
+      const selCascaderNodeArr: any = [];
+      nInpArr.forEach((inpItem: string) => {
+        // push 前去重
+        if (inpItem && listValMap[inpItem]) {
+          const splitValueArr = listValMap[inpItem].split(
+            "__RC_CASCADER_SPLIT__"
+          );
+          const splitNodeArr = splitValueArr.map((code: string) => {
+            return findNodeByValue(code, list, fieldNames);
+          });
+          selCascaderArr.push(splitValueArr);
+          selCascaderNodeArr.push(splitNodeArr);
+        }
+      });
+      updateCascader(selCascaderArr, selCascaderNodeArr);
+    }
   }
 
   useEffect(() => {
@@ -123,6 +160,9 @@ const AddCityBlock: React.FC<CascaderProps> = ({
           ?.addEventListener("click", checkAllCheckBox);
       }, 0);
     }
+    if (defaultValue && defaultValue.length > 0) {
+      defaultValueHandle(defaultValue);
+    }
     return () => {
       // 销毁
       if (level > 1) {
@@ -140,9 +180,8 @@ const AddCityBlock: React.FC<CascaderProps> = ({
       <div>
         <div className="cascader-head">
           {levelArr.map((levelItem, index) => {
-            // 直接切换子级的情况 todo
             return (
-              <>
+              <div key={index}>
                 <Checkbox
                   checked={levelItem.checked}
                   className="cascader-all"
@@ -194,10 +233,9 @@ const AddCityBlock: React.FC<CascaderProps> = ({
                     className="line"
                   />
                 )}
-              </>
+              </div>
             );
           })}
-          {/* <Checkbox className='cascader-all' onChange={onAllSelNext}>全选</Checkbox> */}
         </div>
         {menus}
       </div>
@@ -208,7 +246,7 @@ const AddCityBlock: React.FC<CascaderProps> = ({
     <Modal
       style={{ borderRadius: "8px", overflow: "hidden" }}
       width={738}
-      bodyStyle={{ height: 614 }}
+      bodyStyle={{ height: 520 }}
       title="添加筛选条件"
       visible={visible}
       onOk={() => {
@@ -216,7 +254,6 @@ const AddCityBlock: React.FC<CascaderProps> = ({
         if (onOk) {
           onOk(cascaderSelOptions);
         } else {
-          console.log(cascaderSelOptions);
           message.success(JSON.stringify(cascaderSelOptions));
         }
       }}
@@ -257,12 +294,12 @@ const AddCityBlock: React.FC<CascaderProps> = ({
             placeholder="请输入搜索内容"
             notFoundContent="暂无数据"
             showSearch
-            displayRender={(labels: any) => {
-              return labels.map((label: any, index: number) => {
-                // eslint-disable-next-line react/no-array-index-key
-                return <span key={index}>{label} </span>;
-              });
-            }}
+            // displayRender={(labels: any) => {
+            //   return labels.map((label: any, index: number) => {
+            //     // eslint-disable-next-line react/no-array-index-key
+            //     return <span key={index}>{label} </span>
+            //   })
+            // }}
             style={{
               width: `${level * 213}px`,
             }}
@@ -277,6 +314,7 @@ const AddCityBlock: React.FC<CascaderProps> = ({
           updateCascader={updateCascader}
           list={newList}
           fieldNames={fieldNames}
+          listValMap={listValMap}
         />
       </div>
     </Modal>
