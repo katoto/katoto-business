@@ -60,16 +60,16 @@ const AddCityBlock: React.FC<CascaderProps> = ({
     return calListLevel(newList, fieldNames.children);
   }, [newList, fieldNames.children]);
   const levelMap = useMemo(() => {
-    return new Array(level).fill(undefined).map(() => {
-      return { checked: false };
+    return new Array(level).fill(undefined).map((index) => {
+      return { checked: false, keyId: index };
     });
   }, [level]);
 
   const [levelArr, setLevelArr] =
-    useState<{ checked: boolean | undefined }[]>(levelMap); // 直接fill 对象是同一个
+    useState<{ checked: boolean | undefined; keyId: number }[]>(levelMap); // 直接fill 对象是同一个
   const listValMap = useMemo(() => {
     return treeKeyPathMap(newList, fieldNames, defaultValueKey);
-  }, [fieldNames, newList]);
+  }, [fieldNames, newList, defaultValueKey]);
 
   function checkAllCheckBox() {
     // hack 处理，避免检查异步
@@ -181,7 +181,7 @@ const AddCityBlock: React.FC<CascaderProps> = ({
         <div className="cascader-head">
           {levelArr.map((levelItem, index) => {
             return (
-              <div key={index}>
+              <div key={levelItem.keyId}>
                 <Checkbox
                   checked={levelItem.checked}
                   className="cascader-all"
@@ -294,12 +294,6 @@ const AddCityBlock: React.FC<CascaderProps> = ({
             placeholder="请输入搜索内容"
             notFoundContent="暂无数据"
             showSearch
-            // displayRender={(labels: any) => {
-            //   return labels.map((label: any, index: number) => {
-            //     // eslint-disable-next-line react/no-array-index-key
-            //     return <span key={index}>{label} </span>
-            //   })
-            // }}
             style={{
               width: `${level * 213}px`,
             }}

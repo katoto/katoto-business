@@ -168,12 +168,7 @@ const CascaderRf: React.FC<CascaderRfProps> = ({
             return (
               <Tag
                 key={joinVal}
-                style={{
-                  marginTop: "8px",
-                  maxWidth: "220px",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                }}
+                className="cascader-rf-tag"
                 closable
                 title={joinName}
                 onClose={() => {
