@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.12](https://gitlab.huolala.cn/group-van/stone-business/compare/v0.0.11...v0.0.12) (2022-03-10)
+
+### Features
+
+- fix export bug ([9d91d26](https://gitlab.huolala.cn/group-van/stone-business/commit/9d91d265bb3391169b3b6d0edbb1e66e69f40032))
+
 ### [0.0.11](https://gitlab.huolala.cn/group-van/stone-business/compare/v0.0.10...v0.0.11) (2022-03-10)
 
 ### Features
