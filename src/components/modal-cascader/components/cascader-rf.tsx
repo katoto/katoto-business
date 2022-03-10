@@ -38,7 +38,7 @@ const CascaderRf: React.FC<CascaderRfProps> = ({
   const [selOptionVals, setSelOptionVals] = useState<CascaderValsItemKeys[][]>(
     []
   );
-  const subRef = useRef<Input>(null);
+  const subRef = useRef<Input | null>(null);
   const selVals: string[][] = useMemo(() => {
     return cascaderOption2Value(cascaderVals, fieldNames);
   }, [cascaderVals, fieldNames]);
