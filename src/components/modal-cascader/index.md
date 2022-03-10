@@ -401,8 +401,8 @@ export default function () {
 | cascaderLevel   | 展示层级                                   | `number`          | list 树的最大深度值                                      |
 | fieldNames      | 自定义 list 中 label value children 的字段 | `object`          | { label: `label`, value: `value`, children: `children` } |
 | list            | cascader 展示数据                          | `list[]`          | []                                                       |
-| defaultValue    | 默认的选中项                               | `string[]`        | undefined                                                |
-| defaultValueKey | 默认的选中项的 key                         | `string`          | undefined                                                |
+| defaultValue    | 默认的选中项                               | `string[]`        | -                                                        |
+| defaultValueKey | 默认的选中项的 key                         | `string`          | -                                                        |
 | onCancel        | 点击遮罩层或右上角叉或取消按钮的回调       | function          | -                                                        |
 | onOk            | 点击确定回调                               | function(selList) | -                                                        |
 
