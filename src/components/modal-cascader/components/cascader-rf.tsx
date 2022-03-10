@@ -38,7 +38,7 @@ const CascaderRf: React.FC<CascaderRfProps> = ({
   const [selOptionVals, setSelOptionVals] = useState<CascaderValsItemKeys[][]>(
     []
   );
-  const subRef = useRef<Input | null>(null);
+  const subRef = useRef(null);
   const selVals: string[][] = useMemo(() => {
     return cascaderOption2Value(cascaderVals, fieldNames);
   }, [cascaderVals, fieldNames]);
@@ -143,7 +143,9 @@ const CascaderRf: React.FC<CascaderRfProps> = ({
             setSearchValue("");
             setInputValue("");
             setTimeout(() => {
-              subRef.current?.focus();
+              if (subRef.current) {
+                (subRef.current as HTMLInputElement).focus();
+              }
             }, 0);
           }}
           onChange={(e) => {
