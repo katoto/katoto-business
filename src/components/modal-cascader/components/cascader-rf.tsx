@@ -101,8 +101,11 @@ const CascaderRf: React.FC<CascaderRfProps> = ({
 
   return (
     <div className="screen-rf">
+      {/* className="screen-rf-input" */}
+      {/* suffix={<SearchOutlined />} */}
+      <Input />
+
       <Input
-        className="screen-rf-input"
         value={searchValue}
         onChange={(e) => {
           setSearchValue(e.target.value);
@@ -113,7 +116,6 @@ const CascaderRf: React.FC<CascaderRfProps> = ({
         }}
         placeholder="请输入搜索内容"
         allowClear
-        suffix={<SearchOutlined />}
       />
       <div className="screen-rf-txt">
         <span>已选：{cascaderVals.length || 0}</span>
