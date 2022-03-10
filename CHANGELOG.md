@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.11](https://gitlab.huolala.cn/group-van/stone-business/compare/v0.0.10...v0.0.11) (2022-03-10)
+
+### Features
+
+- npm pack 1.0 ([99461a6](https://gitlab.huolala.cn/group-van/stone-business/commit/99461a68d85b24692f4ed4968e50cad5881f05eb))
+
+### Bug Fixes
+
+- remote detailInfo ([f7bad11](https://gitlab.huolala.cn/group-van/stone-business/commit/f7bad1130e63f4078858cffcb02432c2554e646f))
+
 ### [0.0.10](https://gitlab.huolala.cn/group-van/stone-business/compare/v0.0.9...v0.0.10) (2022-03-10)
 
 ### Features
