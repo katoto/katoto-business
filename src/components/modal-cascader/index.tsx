@@ -18,7 +18,7 @@ interface List {
   [key: string]: any;
 }
 
-interface CascaderProps {
+export interface ModalCascaderProps {
   visible: boolean;
   cascaderLevel?: number;
   fieldNames?: {
@@ -39,7 +39,7 @@ const DefaultFieldNames = {
   value: "value",
   children: "children",
 };
-const AddCityBlock: React.FC<CascaderProps> = ({
+const AddCityBlock: React.FC<ModalCascaderProps> = ({
   visible,
   onCancel,
   onOk,
