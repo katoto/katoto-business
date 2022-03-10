@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.10](https://gitlab.huolala.cn/group-van/stone-business/compare/v0.0.9...v0.0.10) (2022-03-10)
+
+### Features
+
+- 更新 cascader 组件 ([c67bd2c](https://gitlab.huolala.cn/group-van/stone-business/commit/c67bd2c69a65632e64c6bcef8fa191be615e3c4d))
+
 ### 0.0.9 (2022-03-09)
 
 ### Features
