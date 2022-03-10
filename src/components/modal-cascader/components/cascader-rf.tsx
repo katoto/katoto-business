@@ -1,4 +1,4 @@
-import { Input, Tag } from "antd";
+import { Input, InputRef, Tag } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import { memo, useEffect, useMemo, useRef, useState } from "react";
 import { findNodeByValue, cascaderOption2Value } from "../utils";
@@ -38,7 +38,7 @@ const CascaderRf: React.FC<CascaderRfProps> = ({
   const [selOptionVals, setSelOptionVals] = useState<CascaderValsItemKeys[][]>(
     []
   );
-  const subRef = useRef(null);
+  const subRef = useRef<InputRef>(null);
   const selVals: string[][] = useMemo(() => {
     return cascaderOption2Value(cascaderVals, fieldNames);
   }, [cascaderVals, fieldNames]);
@@ -144,7 +144,7 @@ const CascaderRf: React.FC<CascaderRfProps> = ({
             setInputValue("");
             setTimeout(() => {
               if (subRef.current) {
-                (subRef.current as HTMLInputElement).focus();
+                subRef.current.focus();
               }
             }, 0);
           }}
