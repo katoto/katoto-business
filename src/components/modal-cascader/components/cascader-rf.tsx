@@ -1,5 +1,5 @@
-import { Input, Tag } from "antd";
 import type { InputRef } from "antd";
+import { Input, Tag } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import { memo, useEffect, useMemo, useRef, useState } from "react";
 import { findNodeByValue, cascaderOption2Value } from "../utils";
@@ -144,9 +144,7 @@ const CascaderRf: React.FC<CascaderRfProps> = ({
             setSearchValue("");
             setInputValue("");
             setTimeout(() => {
-              if (subRef.current) {
-                subRef.current.focus();
-              }
+              subRef.current?.focus();
             }, 0);
           }}
           onChange={(e) => {
