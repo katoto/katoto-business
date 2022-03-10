@@ -103,7 +103,9 @@ const CascaderRf: React.FC<CascaderRfProps> = ({
     <div className="screen-rf">
       {/* className="screen-rf-input" */}
       {/* suffix={<SearchOutlined />} */}
-      <Input />
+
+      <Input allowClear />
+      <Input allowClear suffix={<SearchOutlined />} />
 
       <Input
         value={searchValue}
