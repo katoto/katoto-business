@@ -4,5 +4,5 @@ export default {
     minify: false,
   },
   cjs: "rollup",
-  extractCSS: true,
+  extractCSS: true, // 业务样式是否提成单独.css
 };
