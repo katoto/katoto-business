@@ -1,6 +1,6 @@
 {
   "name": "@hll/stone-business",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "scripts": {
     "start": "dumi dev",
     "build": "dumi build && mv ./dist/index.html ./dist/200.html",
@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
+    "@hll/stone-business": "^0.0.15",
     "@types/lodash": "^4.14.179",
     "@umijs/preset-react": "^2.1.1",
     "@umijs/test": "^3.0.5",

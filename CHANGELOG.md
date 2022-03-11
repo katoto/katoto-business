@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.17](https://gitlab.huolala.cn/group-van/stone-business/compare/v0.0.15...v0.0.17) (2022-03-11)
+
+### Bug Fixes
+
+- test npm ([5ca9c1a](https://gitlab.huolala.cn/group-van/stone-business/commit/5ca9c1a28bee918c5942a81b059043cdceb007f8))
+
 ### [0.0.15](https://gitlab.huolala.cn/group-van/stone-business/compare/v0.0.14...v0.0.15) (2022-03-10)
 
 ### Bug Fixes
