@@ -4,4 +4,5 @@ export default {
     minify: false,
   },
   cjs: "rollup",
+  extractCSS: true,
 };
