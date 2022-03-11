@@ -3,6 +3,7 @@ import { Input, Tag } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import { memo, useEffect, useMemo, useRef, useState } from "react";
 import { findNodeByValue, cascaderOption2Value } from "../utils";
+import "antd/es/input/style";
 import "./cascader-rf.less";
 interface CascaderValsItemKeys {
   code: string;
@@ -101,13 +102,8 @@ const CascaderRf: React.FC<CascaderRfProps> = ({
 
   return (
     <div className="screen-rf">
-      {/* className="screen-rf-input" */}
-      {/* suffix={<SearchOutlined />} */}
-
-      <Input allowClear />
-      <Input allowClear suffix={<SearchOutlined />} />
-
       <Input
+        className="screen-rf-input"
         value={searchValue}
         onChange={(e) => {
           setSearchValue(e.target.value);
@@ -118,6 +114,7 @@ const CascaderRf: React.FC<CascaderRfProps> = ({
         }}
         placeholder="请输入搜索内容"
         allowClear
+        suffix={<SearchOutlined />}
       />
       <div className="screen-rf-txt">
         <span>已选：{cascaderVals.length || 0}</span>

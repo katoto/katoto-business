@@ -1,4 +1,4 @@
-import { Modal, Checkbox, message, Input } from "antd";
+import { Modal, Checkbox, message } from "antd";
 import CascaderRf from "./components/cascader-rf";
 import { Cascader } from "antd";
 import { useEffect, useMemo, useState } from "react";
@@ -11,7 +11,6 @@ import {
 } from "./utils";
 import type { CheckboxChangeEvent } from "antd/lib/checkbox";
 import "./index.less";
-import { SearchOutlined } from "@ant-design/icons";
 interface List {
   value?: string | number;
   label?: string;
@@ -274,9 +273,6 @@ const AddCityBlock: React.FC<ModalCascaderProps> = ({
             todo
           </div>
         )}
-        <Input allowClear />
-        <Input allowClear suffix={<SearchOutlined />} />
-
         <div>
           <Cascader
             className="city-sel"
