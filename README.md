@@ -68,5 +68,3 @@ https://styleguidist-v-stg.huolala.cn/docs/library/introduction#library-%E8%A7%8
 [father-build 是如何工作的](https://yes-1-am.gitbook.io/blog/web-kai-fa-guo-wang-gong-zuo-chen-dian/fatherbuild-shi-ru-he-gong-zuo-de)
 
 todo 几种打包出来的格式区别
-
-#### 内部依赖情况 todo
