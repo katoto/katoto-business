@@ -1,6 +1,6 @@
 {
   "name": "@hll/stone-business",
-  "version": "0.0.20",
+  "version": "0.0.20-rc.2",
   "scripts": {
     "start": "dumi dev",
     "build": "dumi build && mv ./dist/index.html ./dist/200.html",
@@ -49,10 +49,15 @@
     "@types/classnames": "^2.2.10",
     "@types/jest": "^25.2.1",
     "@types/js-cookie": "^2.2.6",
+    "babel-plugin-import": "^1.13.3",
     "dumi": "^1.1.38",
     "father-build": "^1.21.1",
     "prettier": "^2.5.1",
     "standard-version": "^9.3.2",
     "yorkie": "^2.0.0"
-  }
+  },
+  "browserslist": [
+    "ie>10",
+    "Safari >= 10"
+  ]
 }

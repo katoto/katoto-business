@@ -1,8 +1,23 @@
 export default {
   esm: {
     type: "rollup",
-    minify: false,
+    minify: false, // 是否压缩esm
   },
-  cjs: "rollup",
+  cjs: {
+    minify: false, // 是否压缩cjs
+    type: "rollup",
+  },
   extractCSS: true, // 业务样式是否提成单独.css
+  autoprefixer: {}, // 配置在package.json browserslist
+  extraBabelPlugins: [
+    [
+      "babel-plugin-import",
+      {
+        libraryName: "antd",
+        libraryDirectory: "es",
+        style: true,
+      },
+    ],
+  ],
+  extraRollupPlugins: [], // 额外配置rollupPlugin
 };

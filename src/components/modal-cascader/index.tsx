@@ -1,4 +1,3 @@
-import "antd/es/style/index.less";
 import { Modal, Checkbox, message } from "antd";
 import CascaderRf from "./components/cascader-rf";
 import { Cascader } from "antd";
