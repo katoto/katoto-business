@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.22](https://gitlab.huolala.cn/group-van/stone-business/compare/v0.0.21...v0.0.22) (2022-03-13)
+
+### Features
+
+- 打包配置新增 & 组件优化 ([db38f26](https://gitlab.huolala.cn/group-van/stone-business/commit/db38f26309849363a48bc73453fc942b5b5e254b))
+
+### Bug Fixes
+
+- rename ([cc439cb](https://gitlab.huolala.cn/group-van/stone-business/commit/cc439cb47611e5297db9fda71ce5f129bc90ddfd))
+
 ### [0.0.21](https://gitlab.huolala.cn/group-van/stone-business/compare/v0.0.21-rc.1...v0.0.21) (2022-03-13)
 
 ### Features

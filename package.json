@@ -1,9 +1,9 @@
 {
   "name": "katoto-business",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "scripts": {
     "start": "dumi dev",
-    "build": "dumi build && mv ./dist/index.html ./dist/200.html",
+    "build": "dumi build",
     "package:build": "father-build",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test -w",
