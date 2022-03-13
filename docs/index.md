@@ -1,6 +1,6 @@
 ### 简介
 
-@katoto/business 是针对,高频使用的组件进行抽象出来的一个组件集合。通常放置业务公用组件
+katoto-business 是针对,高频使用的组件进行抽象出来的一个组件集合。通常放置业务公用组件
 主体可包含
 
 - 页面级组件（可抽离的页面）
@@ -51,7 +51,7 @@ $ yarn build
 ```
 ⚠️注意：命名方式上，业务组件大驼峰、工具函数小驼峰、hooks、use开头
 
-import { Button, centToYuan, useMounted } from '@katoto/business'
+import { Button, centToYuan, useMounted } from 'katoto-business'
 
 ```
 
