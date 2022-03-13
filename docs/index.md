@@ -21,10 +21,8 @@ stone-business 是针对 stone 中，高频使用的组件进行抽象出来的�
     │   └── other.ts             // 其他请求
     └── components               // 功能组件
         ├── Button               // 按钮
-        ├── Modal                // 弹窗
-        ├── NoData               // 空数据占位
-        ├── Toast                // 提示信息
-        └── index.ts             // 功能组件入口
+        ├── ModalCascader        // 弹窗选择框
+        └── Toast                // 功能组件入口
 </pre>
 
 #### 开发
@@ -64,7 +62,3 @@ https://van-doc-v.huolala.work/#/library
 https://styleguidist-v-stg.huolala.cn/docs/library/introduction#library-%E8%A7%84%E8%8C%83
 
 [基于 Dumi 和 father-build 构建](https://www.npmjs.com/package/father-build)
-
-todo 几种打包出来的格式区别
-
-#### 内部依赖情况 todo

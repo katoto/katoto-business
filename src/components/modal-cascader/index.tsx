@@ -39,7 +39,7 @@ const DefaultFieldNames = {
   value: "value",
   children: "children",
 };
-const AddCityBlock: React.FC<ModalCascaderProps> = ({
+const ModalCascader: React.FC<ModalCascaderProps> = ({
   visible,
   onCancel,
   onOk,
@@ -314,4 +314,4 @@ const AddCityBlock: React.FC<ModalCascaderProps> = ({
   );
 };
 
-export default AddCityBlock;
+export default ModalCascader;

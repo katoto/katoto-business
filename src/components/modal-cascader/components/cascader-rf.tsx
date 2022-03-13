@@ -1,10 +1,9 @@
-import type { InputRef } from "antd";
+import { InputRef, message } from "antd";
 import { Input, Tag } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import { memo, useEffect, useMemo, useRef, useState } from "react";
 import { findNodeByValue, cascaderOption2Value } from "../utils";
 import "./cascader-rf.less";
-// import "antd/es/input/style";
 interface CascaderValsItemKeys {
   code: string;
   level: number;
@@ -77,6 +76,9 @@ const CascaderRf: React.FC<CascaderRfProps> = ({
       const selValsPathArr = selVals.map((items) => {
         return items.join("__RC_CASCADER_SPLIT__");
       });
+      const findUlDomsLen = document.querySelectorAll(
+        `.city-sel-dropdown .ant-cascader-menu`
+      );
       inpArr.forEach((inpItem: string) => {
         // push 前去重
         if (
@@ -84,13 +86,28 @@ const CascaderRf: React.FC<CascaderRfProps> = ({
           listValMap[inpItem] &&
           !selValsPathArr.includes(listValMap[inpItem])
         ) {
+          flag = true;
           const splitValueArr = listValMap[inpItem].split(
             "__RC_CASCADER_SPLIT__"
           );
+          if (selValsPathArr.includes(splitValueArr[0])) {
+            // 过滤已添加的城市
+            message.warn("城市已添加");
+            return false;
+          }
+          if (findUlDomsLen === splitValueArr.length) {
+            // 保证是最后一级且有展示的才走点击
+            const findDom = document.querySelectorAll(
+              `.city-sel-dropdown .ant-cascader-menu li[data-path-key="${listValMap[inpItem]}"]`
+            )[0] as HTMLElement;
+            if (findDom) {
+              findDom.click();
+              return false;
+            }
+          }
           const splitNodeArr = splitValueArr.map((code: string) => {
             return findNodeByValue(code, list, fieldNames);
           });
-          flag = true;
           selCascaderArr.push(splitValueArr);
           selCascaderNodeArr.push(splitNodeArr);
         }

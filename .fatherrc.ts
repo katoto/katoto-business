@@ -8,7 +8,6 @@ export default {
     type: "rollup",
   },
   extractCSS: true, // 业务样式是否提成单独.css
-  autoprefixer: {}, // 配置在package.json browserslist
   extraBabelPlugins: [
     [
       "babel-plugin-import",
@@ -19,5 +18,6 @@ export default {
       },
     ],
   ],
+  extraPostCSSPlugins: [],
   extraRollupPlugins: [], // 额外配置rollupPlugin
 };

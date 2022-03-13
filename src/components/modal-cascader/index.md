@@ -116,7 +116,7 @@ export default function () {
  */
 
 import React, { useEffect, useState } from "react";
-import ModalCascader from "./index";
+import { ModalCascader } from "@hll/stone-business";
 import { Button } from "antd";
 
 export default function () {
@@ -217,7 +217,7 @@ export default function () {
  */
 
 import React, { useEffect, useState } from "react";
-import ModalCascader from "./index";
+import { ModalCascader } from "@hll/stone-business";
 import { Button } from "antd";
 
 export default function () {
@@ -308,7 +308,7 @@ export default function () {
  */
 
 import React, { useEffect, useState } from "react";
-import ModalCascader from "./index";
+import { ModalCascader } from "@hll/stone-business";
 import { Button } from "antd";
 
 export default function () {
