@@ -1,6 +1,6 @@
 {
   "name": "@hll/stone-business",
-  "version": "0.0.20-rc.2",
+  "version": "0.0.20",
   "scripts": {
     "start": "dumi dev",
     "build": "dumi build && mv ./dist/index.html ./dist/200.html",
@@ -35,7 +35,6 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "@hll/stone-business": "^0.0.15",
     "@types/lodash": "^4.14.179",
     "@umijs/preset-react": "^2.1.1",
     "@umijs/test": "^3.0.5",
@@ -43,21 +42,25 @@
     "axios": "^0.26.0",
     "classnames": "^2.3.1",
     "lint-staged": "^10.0.7",
-    "react": "^17.0.0"
+    "react": "^17.0.2"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.2",
     "@types/classnames": "^2.2.10",
     "@types/jest": "^25.2.1",
     "@types/js-cookie": "^2.2.6",
+    "@types/react": "^17.0.40",
     "babel-plugin-import": "^1.13.3",
-    "dumi": "^1.1.38",
+    "dumi": "^1.1.39",
     "father-build": "^1.21.1",
     "prettier": "^2.5.1",
     "standard-version": "^9.3.2",
     "yorkie": "^2.0.0"
   },
   "browserslist": [
-    "ie>10",
-    "Safari >= 10"
-  ]
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "license": "MIT"
 }
