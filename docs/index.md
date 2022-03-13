@@ -1,6 +1,6 @@
 ### 简介
 
-stone-business 是针对 stone 中，高频使用的组件进行抽象出来的一个组件集合。通常放置业务公用组件
+@katoto/business 是针对,高频使用的组件进行抽象出来的一个组件集合。通常放置业务公用组件
 主体可包含
 
 - 页面级组件（可抽离的页面）
@@ -43,22 +43,18 @@ $ yarn docs:build
 ```
 
 ```bash
-// 发布：构建本地包, 通过 https://van.huolala.work/libraries/729/task?id=116948  进行发布
+// 发布：构建本地包
 $ yarn build
-// 发布doc 静态站点，通过 https://van.huolala.work/libraries/729/task?id=116948
+// 发布doc 静态站点
 ```
 
 ```
 ⚠️注意：命名方式上，业务组件大驼峰、工具函数小驼峰、hooks、use开头
 
-import { Button, centToYuan, useMounted } from '@hll/stone-business'
+import { Button, centToYuan, useMounted } from '@katoto/business'
 
 ```
 
 #### 资料
-
-https://van-doc-v.huolala.work/#/library
-
-https://styleguidist-v-stg.huolala.cn/docs/library/introduction#library-%E8%A7%84%E8%8C%83
 
 [基于 Dumi 和 father-build 构建](https://www.npmjs.com/package/father-build)

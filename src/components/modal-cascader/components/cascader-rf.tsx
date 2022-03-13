@@ -10,7 +10,7 @@ interface CascaderValsItemKeys {
   level: number;
   name: string;
   areaList?: any;
-  hllId: string;
+  katotoId: string;
 }
 interface CascaderRfProps {
   cascaderVals: CascaderValsItemKeys[][];

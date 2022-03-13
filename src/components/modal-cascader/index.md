@@ -18,7 +18,7 @@ sidebar: true
  */
 
 import React, { useEffect, useState } from "react";
-import { ModalCascader } from "@hll/stone-business";
+import { ModalCascader } from "@katoto/business";
 import { Button } from "antd";
 
 export default function () {
@@ -40,17 +40,17 @@ export default function () {
               level: 2,
               name: "东城区",
               areaList: null,
-              hllId: "1017",
+              katotoId: "1017",
             },
             {
               code: "110108",
               level: 2,
               name: "海淀区",
               areaList: null,
-              hllId: "1017",
+              katotoId: "1017",
             },
           ],
-          hllId: "1017",
+          katotoId: "1017",
         },
       ],
     },
@@ -69,17 +69,17 @@ export default function () {
               level: 2,
               name: "和平区",
               areaList: null,
-              hllId: "1018",
+              katotoId: "1018",
             },
             {
               code: "120119",
               level: 2,
               name: "蓟州区",
               areaList: null,
-              hllId: "1018",
+              katotoId: "1018",
             },
           ],
-          hllId: "1018",
+          katotoId: "1018",
         },
       ],
     },
@@ -116,7 +116,7 @@ export default function () {
  */
 
 import React, { useEffect, useState } from "react";
-import { ModalCascader } from "@hll/stone-business";
+import { ModalCascader } from "@katoto/business";
 import { Button } from "antd";
 
 export default function () {
@@ -138,17 +138,17 @@ export default function () {
               level: 2,
               name: "东城区",
               areaList: null,
-              hllId: "1017",
+              katotoId: "1017",
             },
             {
               code: "110108",
               level: 2,
               name: "海淀区",
               areaList: null,
-              hllId: "1017",
+              katotoId: "1017",
             },
           ],
-          hllId: "1017",
+          katotoId: "1017",
         },
       ],
     },
@@ -167,17 +167,17 @@ export default function () {
               level: 2,
               name: "和平区",
               areaList: null,
-              hllId: "1018",
+              katotoId: "1018",
             },
             {
               code: "120119",
               level: 2,
               name: "蓟州区",
               areaList: null,
-              hllId: "1018",
+              katotoId: "1018",
             },
           ],
-          hllId: "1018",
+          katotoId: "1018",
         },
       ],
     },
@@ -217,7 +217,7 @@ export default function () {
  */
 
 import React, { useEffect, useState } from "react";
-import { ModalCascader } from "@hll/stone-business";
+import { ModalCascader } from "@katoto/business";
 import { Button } from "antd";
 
 export default function () {
@@ -239,17 +239,17 @@ export default function () {
               level: 2,
               name: "东城区",
               areaList: null,
-              hllId: "1017",
+              katotoId: "1017",
             },
             {
               code: "110108",
               level: 2,
               name: "海淀区",
               areaList: null,
-              hllId: "1017",
+              katotoId: "1017",
             },
           ],
-          hllId: "1017",
+          katotoId: "1017",
         },
       ],
     },
@@ -263,14 +263,14 @@ export default function () {
           level: 1,
           name: "天津市",
           areaList: null,
-          hllId: "1018",
+          katotoId: "1018",
         },
         {
           code: "120101",
           level: 1,
           name: "和平区",
           areaList: null,
-          hllId: "1019",
+          katotoId: "1019",
         },
       ],
     },
@@ -308,7 +308,7 @@ export default function () {
  */
 
 import React, { useEffect, useState } from "react";
-import { ModalCascader } from "@hll/stone-business";
+import { ModalCascader } from "@katoto/business";
 import { Button } from "antd";
 
 export default function () {
@@ -330,17 +330,17 @@ export default function () {
               level: 2,
               name: "东城区",
               areaList: null,
-              hllId: "1017",
+              katotoId: "1017",
             },
             {
               code: "110108",
               level: 2,
               name: "海淀区",
               areaList: null,
-              hllId: "1017",
+              katotoId: "1017",
             },
           ],
-          hllId: "1017",
+          katotoId: "1017",
         },
       ],
     },
@@ -354,14 +354,14 @@ export default function () {
           level: 1,
           name: "天津市",
           areaList: null,
-          hllId: "1018",
+          katotoId: "1018",
         },
         {
           code: "120101",
           level: 1,
           name: "和平区",
           areaList: null,
-          hllId: "1019",
+          katotoId: "1019",
         },
       ],
     },
@@ -374,14 +374,14 @@ export default function () {
           setVisible(true);
         }}
       >
-        根据hllId 设置默认值 ['1018', '1017']
+        根据katotoId 设置默认值 ['1018', '1017']
       </Button>
 
       <ModalCascader
         visible={visible}
         cascaderLevel={2}
         defaultValue={["1018", "1017"]}
-        defaultValueKey="hllId"
+        defaultValueKey="katotoId"
         fieldNames={{ label: "name", value: "code", children: "areaList" }}
         list={list}
         onCancel={() => {
