@@ -1,4 +1,5 @@
-import { InputRef, message } from "antd";
+import type { InputRef } from "antd";
+import { message } from "antd";
 import { Input, Tag } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import { memo, useEffect, useMemo, useRef, useState } from "react";
