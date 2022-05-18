@@ -1,0 +1,16 @@
+node_modules
+.DS_Store
+dist
+build
+dist-ssr
+*.local
+yarn-error.log
+yarn.lock
+stats.html
+src/.umi
+.vscode
+/npm-debug.log*
+/package-lock.json
+.umi
+.umi-production
+.umi-test

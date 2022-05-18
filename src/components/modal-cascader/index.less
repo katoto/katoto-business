@@ -1,0 +1,115 @@
+@borderColor: #ebeff5;
+
+.cascader-modal {
+  height: 630px;
+  max-height: calc(100vh - 2px);
+
+  .ant-modal-content {
+    padding-bottom: 2px;
+  }
+}
+
+.cascader-sel-box {
+  width: 424px;
+  height: 48px;
+  background: #fff;
+}
+
+.screen-box {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 472px;
+  max-height: calc(100vh - 154px);
+  border: 1px solid @borderColor;
+
+  .cascader-head {
+    display: flex;
+    height: 36px;
+    margin-top: -2px;
+
+    .cascader-all {
+      width: 182px;
+      height: 36px;
+      margin-right: 14px;
+      margin-left: 16px;
+      line-height: 36px;
+      border-bottom: 1px solid @borderColor;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+    border: 1px solid @borderColor;
+    border-radius: 4px;
+  }
+
+  // .ant-cascader {
+  //   .ant-select-clear {
+  //     margin-right: 16px;
+  //   }
+
+  //   .ant-select-selector {
+  //     margin-right: 16px;
+  //     padding: 8px 0 8px 16px !important;
+  //     box-shadow: none;
+
+  //     .ant-select-selection-placeholder {
+  //       margin-left: 16px;
+  //     }
+
+  //     .ant-select-selection-overflow {
+  //       height: 32px;
+  //       overflow: hidden;
+  //       border: 1px solid @borderColor;
+  //       border-radius: 4px;
+
+  //       &::after {
+  //         margin-left: 16px;
+  //       }
+  //     }
+  //   }
+  // }
+
+  .city-sel-dropdown {
+    height: 416px;
+    max-height: calc(100vh - 210px);
+    padding-top: 0 !important;
+    box-shadow: none !important;
+    left: 0 !important;
+    top: 52.5px !important;
+
+    .ant-cascader-menus,
+    .ant-cascader-menu {
+      height: 378px;
+      max-height: calc(100vh - 248px);
+      margin-top: 0;
+    }
+
+    .ant-cascader-menus {
+      .ant-cascader-menu {
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.ant-modal {
+  padding-bottom: 0 !important;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/*定义滚动条*/
+::-webkit-scrollbar-thumb {
+  background-color: #c0c0c0;
+  border-radius: 4px;
+}

@@ -1,0 +1,99 @@
+@borderColor: #ebeff5;
+
+.screen-rf {
+  flex: 1;
+  box-sizing: border-box;
+  padding: 8px 16px;
+  border-left: 1px solid @borderColor;
+  height: 100%;
+  overflow-y: hidden;
+
+  .screen-rf-input {
+    height: 32px;
+    border: 1px solid @borderColor;
+    border-radius: 4px;
+  }
+
+  .screen-rf-txt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 36px;
+    margin-top: 10px;
+    padding: 8px 0 8px 0;
+    border-bottom: 1px solid @borderColor;
+
+    span {
+      color: #0f1229;
+      font-size: 14px;
+      font-family: PingFang SC, PingFang SC-Regular;
+      line-height: 14px;
+
+      &:last-child {
+        color: #3377ff;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .cascader-tag-box {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 380px;
+    padding-bottom: 10px;
+    overflow-y: scroll;
+
+    .cascader-rf-tag {
+      max-width: 220px;
+      margin-top: 8px;
+      overflow: "hidden";
+      text-overflow: "ellipsis";
+
+      .anticon {
+        padding: 4px 0;
+      }
+    }
+  }
+
+  .cascader-label-inp {
+    padding-left: 2px;
+    color: #0f1229;
+    font-size: 12px;
+    border: none;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  //编译后的css
+  textarea::-webkit-input-placeholder {
+    color: rgb(170, 170, 170);
+  }
+
+  textarea::-moz-placeholder {
+    color: rgb(170, 170, 170);
+  }
+
+  textarea:-ms-input-placeholder {
+    color: rgb(170, 170, 170);
+  }
+
+  .cascader-textarea {
+    margin-top: 10px;
+    height: 364px;
+    max-height: calc(100vh - 254px);
+    padding: 0 2px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  /*定义滚动条*/
+  ::-webkit-scrollbar-thumb {
+    background-color: #c0c0c0;
+    border-radius: 4px;
+  }
+}
