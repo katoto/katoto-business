@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.0.1 (2022-05-18)
+
 ### [0.0.26](https://github.com/katoto/katoto-business/compare/v0.0.31...v0.0.26) (2022-05-18)
 
 ### Features

@@ -1,6 +1,6 @@
 {
   "name": "katoto-business",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "start": "dumi dev",
     "build": "dumi build",
@@ -41,7 +41,7 @@
     "antd": "^4.18.8",
     "axios": "^0.26.0",
     "classnames": "^2.3.1",
-    "katoto-big-calendar": "^0.1.5",
+    "katoto-big-calendar": "^0.1.6",
     "lint-staged": "^10.0.7",
     "moment": "^2.29.3",
     "react": "^17.0.2"
