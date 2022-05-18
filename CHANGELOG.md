@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.3](https://github.com/katoto/katoto-business/compare/v1.0.2...v1.0.3) (2022-05-18)
+
+### Bug Fixes
+
+- netlify build error ([f25d86e](https://github.com/katoto/katoto-business/commit/f25d86e8ff65c1d653bd4a4e79f182eb62d0c680))
+- update package ([8aa069c](https://github.com/katoto/katoto-business/commit/8aa069c256fa201ac54a8bdfdd3c94f9b34db00b))
+
 ### [1.0.2](https://github.com/katoto/katoto-business/compare/v1.0.1...v1.0.2) (2022-05-18)
 
 ### 1.0.1 (2022-05-18)
