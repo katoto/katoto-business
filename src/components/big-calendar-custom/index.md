@@ -1,4 +1,4 @@
-## BigCalendarCustom 介绍
+## katoto-big-calendar 介绍
 
 ### 基本功能
 

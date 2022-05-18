@@ -19,7 +19,6 @@ import React, { useEffect, useState, useMemo } from "react";
 import { ModalCascader } from "katoto-business";
 import { Button, message } from "antd";
 import { city } from "./city"; // 接口数据
-// defaultValue={['1001']} 设置用value的值
 
 export default function () {
   const [visible, setVisible] = useState<boolean>(true);
@@ -404,14 +403,14 @@ export default function () {
           setVisible(true);
         }}
       >
-        根据katotoId 设置默认值 ['1018', '1017']
+        根据testId 设置默认值 ['1018', '1017']
       </Button>
 
       <ModalCascader
         visible={visible}
         cascaderLevel={2}
         defaultValue={["1018", "1017"]}
-        defaultValueKey="katotoId"
+        defaultValueKey="testId"
         fieldNames={{ label: "name", value: "code", children: "areaList" }}
         list={list}
         onCancel={() => {
